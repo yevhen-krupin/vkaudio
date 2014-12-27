@@ -1,0 +1,17 @@
+﻿<Window x:Class="VKAUDIO.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        ResizeMode="NoResize"
+        Icon="icons/icon.ico"
+        Title="Вход" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+        </Grid.RowDefinitions>
+        <WebBrowser x:Name="OAuthWb" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  Margin="5"/>
+        <ProgressBar Grid.Row="1" Height="5" Width="200" IsIndeterminate="True" Margin="2" HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                     Foreground="DodgerBlue"></ProgressBar>
+       
+    </Grid>
+</Window>
