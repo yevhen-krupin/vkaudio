@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace VKAUDIO
+namespace VKAUDIO.Services
 {
     public class PlaybackService
     {

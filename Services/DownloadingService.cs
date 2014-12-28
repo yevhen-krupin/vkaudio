@@ -5,14 +5,15 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using VKAUDIO.Configuration;
+using VKAUDIO.EventArgs;
 
-namespace VKAUDIO
+namespace VKAUDIO.Services
 {
     public class DownloadingService
     {
         public EventHandler<AudioDownloadingFailedEventArgs> FailedAudio { get; set; }
         public EventHandler<DownloadingProgressArgs> ProgressChanged { get; set; }
-        public EventHandler<EventArgs> DownloadFinished { get; set; }
+        public EventHandler<System.EventArgs> DownloadFinished { get; set; }
         volatile int currentIndex = 0;
         public void Download(Audio audio)
         {
@@ -89,7 +90,7 @@ namespace VKAUDIO
         {
             if (DownloadFinished != null)
             {
-                DownloadFinished(this, new EventArgs());
+                DownloadFinished(this, new System.EventArgs());
             }
         }
 

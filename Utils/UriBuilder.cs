@@ -2,7 +2,7 @@
 using System.Text;
 using VKAUDIO.Configuration;
 
-namespace VKAUDIO
+namespace VKAUDIO.Utils
 {
     public class UriBuilder
     {

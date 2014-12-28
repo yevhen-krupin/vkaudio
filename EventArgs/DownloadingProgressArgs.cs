@@ -1,4 +1,4 @@
-namespace VKAUDIO
+namespace VKAUDIO.EventArgs
 {
     public class DownloadingProgressArgs
     {

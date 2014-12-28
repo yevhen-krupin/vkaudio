@@ -1,21 +1,15 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Microsoft.Win32;
-using Newtonsoft.Json;
+using VKAUDIO.EventArgs;
+using VKAUDIO.OAuth;
+using VKAUDIO.Services;
+using VKAUDIO.Utils;
 
-namespace VKAUDIO
+namespace VKAUDIO.Windows
 {
     /// <summary>
     /// Interaction logic for RWPAppWindow.xaml
@@ -156,7 +150,7 @@ namespace VKAUDIO
             MessageBox.Show("Загрузка песни не удалась: " + audioDownloadingFailedEventArgs.Audio.ToString());
         }
 
-        private void DownloadFinished(object sender, EventArgs eventArgs)
+        private void DownloadFinished(object sender, System.EventArgs eventArgs)
         {
             DownloadingService.ProgressChanged -= ProgressChanged;
             DownloadingService.DownloadFinished -= DownloadFinished;

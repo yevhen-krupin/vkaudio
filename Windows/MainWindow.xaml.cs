@@ -1,22 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Security.Policy;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Newtonsoft.Json.Linq;
 using VKAUDIO.Configuration;
+using VKAUDIO.OAuth;
+using UriBuilder = VKAUDIO.Utils.UriBuilder;
 
-namespace VKAUDIO
+namespace VKAUDIO.Windows
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -67,7 +59,7 @@ namespace VKAUDIO
                     JObject jObject = JObject.Parse(tokenObj);
                     OAuthToken oAuthToken = new OAuthToken() { Token = jObject["access_token"].ToString() };
                     var oauthController = new OAuthController(oAuthToken);
-                    RWPAppWindow rwpAppWindow = new RWPAppWindow();
+                    Windows.RWPAppWindow rwpAppWindow = new Windows.RWPAppWindow();
                     rwpAppWindow.Open(oauthController);
                     Close();
                 }
@@ -107,23 +99,6 @@ namespace VKAUDIO
                 var response = wc.DownloadString(UriBuilder.GetToken(code, VKAPP_Config.ClientId));
                 return response;
             }
-        }
-    }
-
-
-    
-
-    public class OAuthToken
-    {
-        public string Token { get; set; }
-    }
-
-    public class OAuthController
-    {
-        public OAuthToken OAuthToken { get; set; }
-        public OAuthController(OAuthToken token)
-        {
-            OAuthToken = token;
         }
     }
 }

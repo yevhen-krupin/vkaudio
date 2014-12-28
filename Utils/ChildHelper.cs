@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media;
 
-namespace VKAUDIO
+namespace VKAUDIO.Utils
 {
     public class ChildHelper
     {

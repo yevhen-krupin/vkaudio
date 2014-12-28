@@ -64,44 +64,45 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AudioDownloadingFailedEventArgs.cs" />
-    <Compile Include="ChildHelper.cs" />
     <Compile Include="Configuration\ApplicationConfiguration.cs" />
     <Compile Include="Converters\SecondsToDurationConverter.cs" />
-    <Compile Include="DownloadingProgressArgs.cs" />
-    <Compile Include="DownloadingService.cs" />
-    <Compile Include="PlaybackService.cs" />
+    <Compile Include="EventArgs\AudioDownloadingFailedEventArgs.cs" />
+    <Compile Include="EventArgs\DownloadingProgressArgs.cs" />
+    <Compile Include="EventArgs\SearchingErrorArgs.cs" />
+    <Compile Include="OAuth\OAuthController.cs" />
+    <Compile Include="OAuth\OAuthToken.cs" />
     <Compile Include="REST\Audio.cs" />
-    <Compile Include="AudioSearchService.cs" />
-    <Compile Include="RwpAppWebClient.cs" />
-    <Compile Include="RWPAppWindow.xaml.cs">
+    <Compile Include="Services\AudioSearchService.cs" />
+    <Compile Include="Services\DownloadingService.cs" />
+    <Compile Include="Services\PlaybackService.cs" />
+    <Compile Include="Utils\ChildHelper.cs" />
+    <Compile Include="Utils\RwpAppWebClient.cs" />
+    <Compile Include="Utils\UriBuilder.cs" />
+    <Compile Include="Windows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\RWPAppWindow.xaml.cs">
       <DependentUpon>RWPAppWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SearchingErrorArgs.cs" />
-    <Compile Include="Settings.xaml.cs">
+    <Compile Include="Windows\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UriBuilder.cs" />
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Configuration\VKAPP_Config.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="RWPAppWindow.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="Settings.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Windows\RWPAppWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Settings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -133,17 +134,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icons\icon.ico" />
-    <Resource Include="icons\pause.png" />
-    <Resource Include="icons\play.png" />
+    <Resource Include="Icons\icon.ico" />
+    <Resource Include="Icons\pause.png" />
+    <Resource Include="Icons\play.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icons\download.ico" />
-    <Resource Include="icons\settings.ico" />
+    <Resource Include="Icons\download.ico" />
+    <Resource Include="Icons\settings.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="icon.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

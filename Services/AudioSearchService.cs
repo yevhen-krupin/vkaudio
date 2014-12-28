@@ -1,13 +1,14 @@
 using System;
 using System.Collections.ObjectModel;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Threading;
 using Newtonsoft.Json.Linq;
+using VKAUDIO.EventArgs;
+using VKAUDIO.Utils;
+using UriBuilder = VKAUDIO.Utils.UriBuilder;
 
-namespace VKAUDIO
+namespace VKAUDIO.Services
 {
     public class AudioSearchService
     {

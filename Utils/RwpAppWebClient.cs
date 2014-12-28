@@ -3,7 +3,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 
-namespace VKAUDIO
+namespace VKAUDIO.Utils
 {
     public class RwpAppWebClient
     {

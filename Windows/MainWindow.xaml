@@ -1,8 +1,8 @@
-﻿<Window x:Class="VKAUDIO.MainWindow"
+﻿<Window x:Class="VKAUDIO.Windows.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         ResizeMode="NoResize"
-        Icon="icons/icon.ico"
+        Icon="../icon.ico"
         Title="Вход" >
     <Grid>
         <Grid.RowDefinitions>
